@@ -1,3 +1,2 @@
 ### NEMO 4.2.1
-This repository is a fork of the release 4.2.1 of NEMO, and it also contains the compilation files
-and the configurations used in ELIC.
+This repository is a fork of the release 4.2.1 of NEMO, and it also contains the compilation files and the configurations used at the Earth and Life Institute Université Catholique de Louvain. This model was used to carry the simulation for the publication: "Impact of ocean vertical mixing parameterization on Arctic sea ice and upper ocean properties using the NEMO-SI3 model" S. Allende et al. 2024.
