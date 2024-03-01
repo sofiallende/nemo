@@ -1,0 +1,26 @@
+%XIOS_HOME           $HOME/tools/xios-elic-2
+
+%ROOTNETCDF          $NETCDF_DIR
+%ROOTHDF5            $HDF5_DIR
+
+%NCDF_INC            -I%ROOTNETCDF/include -I%ROOTHDF5/include
+%NCDF_LIB            -L%ROOTNETCDF/lib -lnetcdf -lnetcdff -L%ROOTHDF5/lib -lhdf5_hl -lhdf5 -lz
+
+%XIOS_INC            -I%XIOS_HOME/inc
+%XIOS_LIB            -L%XIOS_HOME/lib -lxios -lstdc++
+
+%CPP                 cpp -Dkey_nosignedzero
+%FC                  mpifort
+%FCFLAGS             -em -s integer32 -s real64 -O2 -hflex_mp=intolerant
+%FFLAGS              %FCFLAGS
+%LD                  mpifort
+%LDFLAGS             
+%FPPFLAGS            -P -traditional
+%AR                  ar
+%ARFLAGS             -r
+%MK                  gmake
+%USER_INC            %XIOS_INC %NCDF_INC
+%USER_LIB            %XIOS_LIB %NCDF_LIB
+
+%CC                  cc -Wl,"--allow-multiple-definition"
+%CFLAGS              -O1 -Wl,"--allow-multiple-definition"
